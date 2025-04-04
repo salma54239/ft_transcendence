@@ -1,0 +1,116 @@
+upstream frontend_server {
+    server frontend:3000;
+}
+
+upstream backend_server {
+    server web:8000;
+}
+
+server {
+    listen 443 ssl;
+    server_name localhost;
+
+    # SSL configuration
+    ssl_certificate /etc/ssl/certs/nginx.crt;
+    ssl_certificate_key /etc/ssl/private/nginx.key;
+    
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Add for development environment
+    ssl_verify_client optional_no_ca;
+    
+    # Add timeouts to prevent connection issues
+    proxy_connect_timeout 300;
+    proxy_send_timeout 300;
+    proxy_read_timeout 300;
+    send_timeout 300;
+
+    proxy_headers_hash_max_size 1024;
+    proxy_headers_hash_bucket_size 128;
+
+    location / {
+        proxy_pass http://frontend_server;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Proto https;
+        
+        # Add WebSocket support for frontend
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    location /api/ {
+        # Remove trailing slash from proxy_pass to avoid double slashes
+        proxy_pass http://backend_server;
+        
+        # Add these headers for better security and CORS handling
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        
+        # # Modify CORS headers to be more specific
+        # add_header 'Access-Control-Allow-Origin' 'https://$host' always;
+        # add_header 'Access-Control-Allow-Credentials' 'true' always;
+        # add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+        # add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization' always;
+
+        # # Handle OPTIONS requests properly
+        # if ($request_method = 'OPTIONS') {
+        #     add_header 'Access-Control-Allow-Origin' 'https://$host' always;
+        #     add_header 'Access-Control-Allow-Credentials' 'true' always;
+        #     add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+        #     add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization' always;
+        #     add_header 'Access-Control-Max-Age' 1728000;
+        #     add_header 'Content-Type' 'text/plain charset=UTF-8';
+        #     add_header 'Content-Length' 0;
+        #     return 204;
+        # }
+    }
+
+    location /ws {
+        proxy_pass http://backend_server;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        proxy_read_timeout 86400;
+        proxy_send_timeout 86400;
+    }
+
+    location /auth/ {
+        proxy_pass http://backend_server/auth/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        
+        # Add same cookie handling here
+        proxy_cookie_path / "/; HTTPOnly; Secure; SameSite=Lax";
+        proxy_cookie_domain localhost $host;
+    }
+
+    location /media/ {
+        proxy_pass http://backend_server/media/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location @error_page {
+        add_header Content-Type application/json;
+        return 500 '{"error": "Internal Server Error"}';
+    }
+    
+    client_max_body_size 10M;
+}

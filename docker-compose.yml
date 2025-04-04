@@ -1,0 +1,73 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13
+    container_name: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - app_network
+    restart: on-failure
+
+  web:
+    build: ./backend
+    container_name: backend
+    environment:
+      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - app_network 
+    restart: on-failure
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    networks:
+      - app_network
+    restart: on-failure
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    image: nginx:ft_tranc
+    restart: always
+    ports: 
+      - 443:443
+    depends_on:
+      - web
+      - frontend
+    networks:
+      - app_network
+    env_file:
+      - .env
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    networks:
+      - app_network
+    restart: on-failure
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+

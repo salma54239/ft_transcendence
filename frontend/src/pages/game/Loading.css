@@ -1,0 +1,97 @@
+.loading-container{
+    margin : 0;
+    padding: 0;
+    background-color: #3F4054;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ring{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: ring 2s linear infinite;
+    position: absolute;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #b2ff00 ;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #b2ff00;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #b2ff00;
+    }
+}
+
+.ring:before{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% ;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.center span{
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(167, 157, 157);
+    line-height: 200px;
+    animation: text 4s ease-in-out infinite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+}
+
+@keyframes text {
+   50% {color : #3F4054}
+}
+
+
+.loading-container button{
+    margin-top: 80px;
+    text-align: center;
+    background-color: #636987;
+    color: white;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.loading-container button:hover{
+    background-color: #b2ff00;
+    color : #3F4054;
+}
+
+.loading-container p{
+    margin-top: 30px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}

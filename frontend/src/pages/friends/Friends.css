@@ -1,0 +1,292 @@
+.f-friends-page {
+  margin-top: 70px;
+  display: flex;
+  gap: 50px;
+}
+
+.f-friends-section, 
+.f-all-users-section, 
+.f-requests-section, 
+.f-invitations-section {
+  margin-top: 20px;
+  width: 500px;
+  height: 630px;
+  background-color: #636987;
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.f-friends-list, 
+.f-all-users-list, 
+.f-requests-list, 
+.f-invitations-list {
+  list-style: none;
+  padding: 8px;
+  max-height: 580px;
+  overflow-y: auto;
+  color: white;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.f-friend-item, 
+.f-all-users-item, 
+.f-requests-item, 
+.f-invitation-item {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 8px;
+  margin-left: 75px;
+  background-color: #505468;
+  border-radius: 10px;
+}
+.f-friend-item{
+  height: 50px;
+}
+.f-invitation-item{
+  height: 85px;
+}
+
+.f-friend-photo, 
+.f-all-users-photo, 
+.f-requests-photo, 
+.f-invitation-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.f-all-users-photo, 
+.f-requests-photo{
+  margin-left: 25px;
+}
+.f-invitation-photo{
+  margin-left: 20px;
+}
+
+.f-friend-details,
+.f-all-users-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  flex: 1;
+}
+.f-invitation-photo{
+  margin-bottom: 35px;
+}
+
+.f-cancel-friend-button{
+  width: 90px;
+  font-size: 15px;
+  color: rgb(223, 209, 209);
+  background-color: #E84172;
+  padding: 4px 8px;
+  margin-left: 105px;
+  text-align: center;
+  border: 0.5px solid rgb(144, 131, 131);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.f-cancel-friend-button:hover {
+  background-color: #d1406c;;
+  border-color: #3F4054;
+}
+
+.f-add-friend-button {
+  width: 90px;
+  font-size: 15px;
+  color: rgb(98, 89, 89);
+  background-color: #BBFC52;
+  padding: 4px 8px;
+  margin-left: 105px;
+  text-align: center;
+  border: 0.5px solid rgb(189, 187, 187);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.f-add-friend-button:hover {
+  background-color: #A9DB4C;
+  border-color: #3F4054;
+}
+
+.f-invitation-details {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.f-friends-titles {
+  padding-bottom: 15px;
+  padding-right: 220px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-bottom: 1px solid #4C4F5C;
+}
+
+.f-icon {
+  margin-right: 8px;
+  color: #BBFC52;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.f-icon:hover {
+  color: #A9DB4C;
+}
+
+.f-invitation-buttons {
+  display: flex;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.f-accept-button {
+  width: 80px;
+  color: rgb(98, 89, 89);
+  background-color: #BBFC52;
+  padding: 4px 8px;
+  text-align: center;
+  border: 0.5px solid rgb(189, 187, 187);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.f-accept-button:hover {
+  background-color: #A9DB4C;
+  border-color: #3F4054;
+}
+
+.f-cancel-button {
+  width: 80px;
+  margin-left: 20px;
+  color: #3F4054;
+  background-color: #E84172;
+  padding: 4px 8px;
+  text-align: center;
+  border: 0.5px solid #24252c;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.f-cancel-button:hover {
+  background-color: #d1406c;
+  border-color: #3F4054;;
+}
+
+.f-invitation-message {
+  color: #d3d3d3;
+  font-size: 14px;
+}
+
+.f-invitation-icon {
+  font-size: 18px;
+  color: #BBFC52;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.f-invitation-icon:hover {
+  color: #A9DB4C;
+}
+
+
+.f-all-users-name,
+.f-requests-name{
+  padding-top: 20px;
+}
+
+.f-all-users-photo,
+.f-requests-photo
+{
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+
+
+.f-requests-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  
+}
+
+.f-requests-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.f-requests-name {
+  font-size: 16px;
+  color: white;
+}
+
+.f-friends-page {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.f-section-toggle-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 50px;
+}
+
+.f-section-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.f-toggle-button {
+  padding: 10px 19px;
+  width: 150px;
+  background-color: #505468;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 17px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.f-toggle-button.active {
+  background-color: #BBFC52;
+  color: #3F4054;
+}
+
+.f-toggle-button:hover {
+  background-color: #636987;
+}
+
+.f-section-content {
+  display: flex;
+  justify-content: center;
+}
+
+.f-friend-status-icon{
+  font-size: 11px;
+}
+
+.f-friend-status{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #d3d3d3;
+  font-size: 14px;
+  margin-top: 2px;
+}

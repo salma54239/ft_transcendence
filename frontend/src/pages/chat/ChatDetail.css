@@ -1,0 +1,128 @@
+.chat-detail {
+  display: flex;
+  flex-direction: column;
+  background-color: #3F4054;
+  height: 100%;
+  color: white;
+}
+
+.chat-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  flex-shrink: 0;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #636987 #3F4054;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #3F4054;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #636987;
+  border-radius: 4px;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin: 5px 0;
+}
+
+.message-wrapper.own {
+  justify-content: flex-end;
+}
+
+.message-wrapper.other {
+  justify-content: flex-start;
+}
+
+.message {
+  position: relative;
+  max-width: 60%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message.own {
+  background-color: #636987ce !important;
+  color: #f591af;
+  margin-left: auto;
+}
+
+
+.message.other {
+  background-color: #bbfc52b6;
+  color: #5e0303;
+  margin-right: auto;
+}
+
+.message p {
+  margin: 0;
+}
+
+
+.message span {
+  display: block;
+  font-size: 12px;
+  color: #969393;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  border-top: 1px solid rgba(200, 200, 200, 0.5);
+  background-color: rgba(63, 64, 84, 0.8);
+  flex-shrink: 0;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(52, 68, 99, 0.5);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.chat-input .send-button {
+  background-color: #E84172;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input .send-button:hover {
+  background-color: rgba(232, 65, 114, 0.8);
+}

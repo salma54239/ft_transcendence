@@ -1,0 +1,81 @@
+.online-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3F4054;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.online-container {
+    width: 300px;
+    height: 500px;
+    border: none;
+    background-color: white;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 280px;
+    height: 50px;
+    border: none;
+    background-color: #535379;
+    color: white;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.line {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.square {
+    width: 50px;
+    height: 50px;
+    background-color: #535379;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.friend-name {
+    font-weight: bold;
+}
+
+.add-friend {
+    color: #535379;
+    margin-left: 89px;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.invite {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: #BBFC52;
+    margin-top: 200px;
+    
+}
+
+.send-invite {
+    color: #3F4054;
+    font-weight: bold;
+    padding: 12px;
+
+}

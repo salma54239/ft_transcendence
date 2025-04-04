@@ -1,0 +1,11 @@
+.banner {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .banner-image {
+    width: 20%;
+    height: auto;
+    padding: 0 80%;
+  }
+  

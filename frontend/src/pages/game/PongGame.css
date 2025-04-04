@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
+
+.game_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-family: "Rationale";
+    font-size: 20px;
+    color: #3F4054;
+    margin: 0;
+  }
+  
+  .adversaries{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    width: 1000px;
+    height: 80px;
+    margin: 0;
+    margin-bottom: 30px;
+  } 
+  .player1, .player2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+  }
+
+  .player1{
+    background-color: #D8FD62;
+  }
+
+  .player2{
+    background-color: #E84172;
+  }
+
+.p-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.p-img img{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.p-name1, .p-name2{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    font-weight: bold;
+  }
+  
+.p-name1{
+  justify-content:baseline;
+}
+.p-name2{
+  justify-content: end;
+}
+
+.V, .S{
+    display: flex;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    padding-left: 0;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .V{
+    justify-content:end;
+    color: #E84172;
+  }
+
+  .S{
+    justify-content:baseline;
+    color: #b2ff00;
+}
+
+
+.levels-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    width: 100%;
+}
+
+.level-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+}
+
+.tour-level{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #636987;
+    border-bottom: 10px solid #E5C56C;
+    width: 100%;
+    height: 400px;
+}
+
+.tour-level span{
+    font-family: "Rationale";
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+    padding: 0;
+
+}
+.tour-level svg{
+    color: #E5C56C;
+    font-size: 80px;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.restart-tour svg{
+    color: #D5CFCF;
+    font-size: 40px;
+    margin-top: 40px;
+}

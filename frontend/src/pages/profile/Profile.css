@@ -1,0 +1,294 @@
+.titles-profile{
+    font-size: 20px;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.title-profile{
+  padding-left: 85px;
+  font-size: 20px;
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content-profile {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+
+.info-profile {
+  margin-left: 90px;
+  margin-top: 20px;
+  width: 800px;
+  background-color: #636987;
+  height: 200px;
+  border-radius: 17px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.infos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+
+.info-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-friends,
+.info-history,
+.info-achievement {
+  width: 300px;
+  height: 400px;
+  background-color: #636987;
+  border-radius: 17px;
+  margin-top: 10px;
+}
+
+.profile-photo{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-left: 150px;
+
+}
+
+.user-name{
+  display: flex;
+}
+
+.name-status{
+  align-items: center;
+  gap: 8px;
+  color: white;
+  margin-top: 40px;
+  margin-left: 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  color: #d3d3d3;
+  gap: 4px;
+}
+
+.profile-status-icon {
+  color: #BBFC52;
+  font-size: 12px;
+}
+
+.level{
+  margin-top: 20px;
+  padding-left: 80px;
+}
+
+.level-bar {  
+  width: 560px;
+  height: 27px;
+  background-color: #d3d3d3;
+  border-radius: 17px;
+  border: 0.5 solid white;
+}
+
+.level-fill {
+  height: 100%;
+  background-color: #BBFC52;
+  border-radius: 17px;
+}
+
+.my-level{
+  padding-top: 6px;
+  padding-left: 8px;
+  color: #636987;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.edit{
+  margin-left: 600px;
+  width: 90px;
+  background-color: #E84172;
+  height: 26px;
+  border-radius: 15px;
+  border: 0.5px solid #3F4054;
+  cursor: pointer;
+}
+
+.edit:hover{
+  background-color: #d1406c;
+  border-color: #3F4054;
+}
+
+.text-edit{
+  padding-top: 4px;
+  color: rgb(242, 219, 219);
+  padding-left: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.friends-list {
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  max-height: 95.8%;
+  overflow-y: auto;
+  color: white;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.friend-photo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.friend-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.friend-name {
+  color: white;
+}
+
+.friend-message{
+  color: #d3d3d3;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.friend-icons {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-left: auto; 
+}
+
+.icon {
+  color: #BBFC52;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.icon:hover{
+  color: #A9DB4C;
+}
+
+.history-list {
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  max-height: 95.8%;
+  overflow-y: auto;
+  color: white;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 8px;
+  margin: 0;
+  max-height: 95.8%;
+  overflow-y: auto;
+  color: white;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.history-profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  
+}
+
+.history-result {
+  width: 20%;
+}
+
+.history-level {
+  font-size: 14px;
+  color: #d3d3d3;
+}
+
+
+
+.achievement-item {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.achievement-icon {
+  font-size: 30px;
+  color: #D8FD62;
+  margin-right: 10px;
+}
+
+.achievement-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-title {
+  list-style: none;
+  padding: 10px;
+  max-height: 350px;
+  overflow-y: auto;
+  color: white;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.achievement-description {
+  color: #d3d3d3;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+
+.friend-item,
+.achievement-item,
+.history-item{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #505468;
+  border-radius: 10px;
+}
+
+.profile-status-icon{
+  font-size: 11px;
+}
+         
